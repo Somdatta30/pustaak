@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-
+from .models import Blog
 from .form import CreateUserForm
 
 # Create your views here
@@ -63,3 +63,9 @@ def logout_user(request):
     logout(request)
     messages.info(request, "You have been successfully logged out.")
     return redirect('home')
+
+def blog(request):
+    model = Blog.objects.all()
+
+    context = {'bloc': model}
+    return render(request, 'blog.html', context)

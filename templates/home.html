@@ -1,1721 +1,1682 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+  <head>
+    <title>पुसtaak</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="{% static 'style./main.css' %}"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
 
-    <head>
-        <title> पुसtaak </title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" href="{% static 'style./main.css' %}"> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
-    <body>
-        <style>
-            *{
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                font-family: sans-serif;
-            }
-            
-            section{
-                width: 100%;
-                height: 100vh;
-                background-image: url("{% static 'images/images.jpeg' %}");
-                background-size: cover;
-                background-position: center;
-            }
-            
-            section nav{
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                box-shadow: 0 0 10px #089da1;
-                background: #fff;
-                position: fixed;
-                left: 0;
-                z-index: 100;
-            }
-            
-            section nav .logo img{
-                width: 120px;
-                height: 120px;
-                cursor: pointer;
-                margin: 0 10px;
-            }
-            
-            section nav h1{
-                font-size: 20px;
-            }
-            
-            section nav ul{
-                list-style: none;
-            }
-            
-            section nav li{
-                display: inline-block;
-                padding: 5px 15px;
-                font-size: 20px;
-                transition: 0.3s;
-            }
-            
-            section nav li:hover{
-                transform: scale(1.6);
-            }
-            
-            section nav li a{
-                text-decoration: none;
-                color: #000;
-            }
-            
-            section nav li a:hover{
-                color: #089da1;
-                transform: scale(1.1);
-            }
-            
-            section nav .social_icon i{
-                color: #000;
-                margin: 0 10px;
-                font-size: 25px;
-                transition: 0.3s;
-            }
-            
-            section nav .social_icon i:hover{
-                color: #089da1;
-                cursor: pointer;
-                transform: scale(1.6);
-            }
-            
-            section .main{
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                position: relative;
-                top: 10%;
-            }
-            
-            section .main h1{
-                position: relative;
-                font-size: 55px;
-                top: 80px;
-                left: 25px;
-            }
-            
-            section .main h1 span{
-                color: #089da1;
-            }
-            
-            section .main p{
-                width: 650px;
-                text-align: justify;
-                line-height: 29px;
-                position: relative;
-                font-size: 24px;
-                font-family: Arial, Helvetica;
-                top: 100px;
-                left: 25px;
-            }
-            
-            .btn{
-                background-color: #089da1;
-                color: white;
-                padding: 20px;
-                font-size: 19px;
-                position: relative;
-                top: 120px;
-                left: 25px;
-                text-decoration: none;
-            }
-              
-            .dropdown{
-                position: absolute;
-                display: inline-block;
-            }
-              
-            .dropdown-content{
-                display: none;
-                position: absolute;
-                background-color: #f1f1f1;
-                min-width: 160px;
-                z-index: 1;
-            }
-              
-            .dropdown-content a{
-                color: black;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-            }
-              
-            .dropdown-content a:hover{
-                background-color: #ddd
-            }
-              
-            .dropdown:hover .dropdown-content{
-                display: block;
-            }
-              
-            .btn:hover .dropdown:hover .btn{
-                background-color: #0b7dda;
-            }
-            
-            section .main .main_img img{
-                width: 780px;
-                position: relative;
-                top: 90px;
-                left: 20px;
-            }
-            
-            
-            
-            
-            
-            
-            .services{
-                width: 100%;
-                height: auto;
-                margin: 35px 0;
-            }
-            
-            .services .services_box{
-                width: 95%;
-                margin: 0 auto;
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-            }
-            
-            .services .services_box .services_card{
-                text-align: center;
-                width: 250px;
-                height: 150px;
-                box-shadow: 0 0 8px #089da1;
-                padding: 30px 10px;
-                transition: 0.3s;
-            }
-            
-            .services .services_box .services_card:hover{
-                transform: scale(1.1);
-            }
-            
-            .services .services_box .services_card i{
-                color: #089da1;
-                font-size: 45px;
-                margin-bottom: 15px;
-                cursor: pointer;
-            }
-            .services .services_box .services_card h3{
-                margin-bottom: 10px;
-                font-size: 25px;
-                font: bold;
-            }
-            
-            .services .services_box .services_card p{
-                font-size: 20px;
-            }
-            
-            
-            
-            
-            
-            
-            
-            .about{
-                width: 100;
-                height: auto;
-                padding: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-            }
-            
-            .about .about_image img{
-                width: 800px;
-            }
-            
-            .about .about_tag h1{
-                font-size: 50px;
-                position: relative;
-                bottom: 35px;
-            }
-            
-            .about .about_tag p{
-                line-height: 27px;
-                width: 600px;
-                font-size: 24px;
-                text-align: justify;
-                margin-bottom: 25px;
-            }
-            
-            
-            
-            
-            
-            .featured_boks{
-                width: 100%;
-                height: 65vh;
-                padding: 0 70px;
-            }
-            
-            .featured_boks h1{
-                display: flex;
-                text-align: center;
-                justify-content: center;
-                margin-top: 150px;
-                font-size: 50px;
-            }
-            
-            .featured_boks .featured_book_box{
-                width: 95%;
-                height: 60vh;
-                margin: 0 auto;
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-                overflow: hidden;
-                overflow-x: scroll;
-            }
-            
-            .featured_boks .featured_book_box .featured_book_card{
-                width: 250px;
-                height: 420px;
-                text-align: center;
-                padding: 5px;
-                border: 1px solid #919191;
-                margin: auto 20px;
-                transition: 0.3s;
-            }
-            
-            .featured_boks .featured_book_box .featured_book_card:hover{
-                box-shadow:  0 0 5px #089da1;
-                transform: scale(1.1);
-            }
-            
-            .featured_boks .featured_book_box .featured_book_card .featurde_book_img{
-                width: 150px;
-                height: 220px;
-                margin: 0 auto;
-                cursor: pointer;
-                box-shadow: 0 0 8px rgba(0,0,0,0.5);
-                overflow: hidden;
-            }
-            
-            .featured_boks .featured_book_box .featured_book_card .featurde_book_img img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-                transition: 0.3s;
-            }
-            
-            .featured_boks .featured_book_box .featured_book_card:hover .featurde_book_img img{
-                transform: scale(1.1);
-            }
-            
-            .featured_boks .featured_book_box .featured_book_card .featurde_book_tag h2{
-                margin: 12px;
-            }
-            
-            .featured_boks .featured_book_box .featured_book_card .featurde_book_tag .writer{
-                color: #3d3a3a;
-            }
-            
-            .featured_boks .featured_book_box .featured_book_card .featurde_book_tag .categories{
-                color: #089da1;
-                margin-top: 8px;
-            }
-            
-            .featured_boks .featured_book_box .featured_book_card .featurde_book_tag .book_price{
-                margin-top: 8px;
-                font-weight: bold;
-                margin-bottom: 15px;
-            }
-            
-            .featured_boks .featured_book_box .featured_book_card .featurde_book_tag .book_price sub{
-                font-weight: 100;
-                padding: 0 5px;
-            }
-            
-            .featured_boks .featured_book_box .featured_book_card .featurde_book_tag .f_btn{
-                padding: 8px 20px;
-                border: 2px solid #089da1;
-                text-decoration: none;
-                background-color: #089da1;
-                color: #000;
-                font: bold;
-            }
-            
-            ::-webkit-scrollbar{
-                width: 10px;
-                height: 5px;
-            }
-            
-            ::-webkit-scrollbar-track{
-                box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
-            }
-            
-            ::-webkit-scrollbar-thumb{
-                background: #089da1;
-                border-radius: 10px;
-            }
-            
-            
-            
-            
-            
-            .authentic{
-                width: 100%;
-                height: 65vh;
-                margin-bottom: 35px;
-                padding: 50px 50px;
-            }
-            
-            .authentic h1{
-                font-size: 50px;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                margin-top: 80px;
-            }
-            
-            .authentic .authentic_box{
-                width: 95%;
-                margin-left: 110px;
-                margin-top: 80px;
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-gap: 0;
-            }
-            
-            
-            .authentic .authentic_box .authentic_card{
-                width: 250px;
-                height: 360px;
-                text-align: center;
-                padding: 5px;
-                border: 1px solid #919191;
-                margin: 20px;
-                transition: 0.3s;
-            }
-            
-            
-            .authentic .authentic_box .authentic_card:hover{
-                box-shadow: 0 0 5px #089da1;
-                transform: scale(1.1);
-            }
-            
-            .authentic .authentic_box .authentic_card .authentic_image{
-                width: 150px;
-                height: 220px;
-                margin: 0 auto;
-                cursor: pointer;
-                box-shadow: 0 0 8px rgba(0,0,0,0.5);
-                overflow: hidden;
-            }
-            
-            .authentic .authentic_box .authentic_card .authentic_image img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-                transition: 0.3s;
-            }
-            
-            
-            .authentic .authentic_box .authentic_card:hover .authentic_image img{
-                transform: scale(1.1);
-            }
-            
-            
-            .authentic .authentic_box .authentic_card .authentic_tag p{
-                font-family: queen of camelot;
-                font-size: 20px;
-                margin: 12px;
-            }
-            
-            .authentic .authentic_box .authentic_card .authentic_tag .authentic_icon{
-                color: #089da1;
-                margin-bottom: 18px;
-            }
-            
-            .authentic .authentic_box .authentic_card .authentic_tag .authentic_btn{
-                padding: 6px 20px;
-                border: 2px solid #089da1;
-                text-decoration: none;
-                background-color: #089da1;
-                color: #000;
-                font: bold;
-            }
-            
-            ::-webkit-scrollbar{
-                width: 10px;
-                height: 5px;
-            }
-            
-            ::-webkit-scrollbar-track{
-                box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
-            }
-            
-            ::-webkit-scrollbar-thumb{
-                background: #089da1;
-                border-radius: 10px;
-            }
-            
-            
-            
-            
-            
-            
-            .trending{
-                width: 100%;
-                height: 45vh;
-                margin-bottom: 35px;
-                padding: 0 70px;
-            }
-            
-            .trending h1{
-                font-size: 50px;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                margin-top: 80px;
-            }
-            
-            .trending .trending_box{
-                width: 95%;
-                height: 60vh;
-                margin: 0 auto;
-                margin-left: 70px;
-                margin-top: 80px;
-                margin-bottom: 10px;
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                grid-gap: 0;
-            }
-            
-            
-            .trending .trending_box .trending_card{
-                width: 250px;
-                height: 360px;
-                text-align: center;
-                padding: 5px;
-                border: 1px solid #919191;
-                margin: 20px;
-                transition: 0.3s;
-            }
-            
-            
-            .trending .trending_box .trending_card:hover{
-                box-shadow: 0 0 5px #089da1;
-                transform: scale(1.1);
-            }
-            
-            .trending .trending_box .trending_card .trending_image{
-                width: 150px;
-                height: 220px;
-                margin: 0 auto;
-                cursor: pointer;
-                box-shadow: 0 0 8px rgba(0,0,0,0.5);
-                overflow: hidden;
-            }
-            
-            .trending .trending_box .trending_card .trending_image img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-                transition: 0.3s;
-            }
-            
-            
-            .trending .trending_box .trending_card:hover .trending_image img{
-                transform: scale(1.1);
-            }
-            
-            
-            .trending .trending_box .trending_card .trending_tag p{
-                font-family: queen of camelot;
-                font-size: 20px;
-                margin: 12px;
-            }
-            
-            .trending .trending_box .trending_card .trending_tag .trending_icon{
-                color: #089da1;
-                margin-bottom: 18px;
-            }
-            
-            .trending .trending_box .trending_card .trending_tag .trending_btn{
-                padding: 6px 20px;
-                border: 2px solid #089da1;
-                text-decoration: none;
-                background-color: #089da1;
-                color: #000;
-                font: bold;
-            }
-            
-            ::-webkit-scrollbar{
-                width: 10px;
-                height: 5px;
-            }
-            
-            ::-webkit-scrollbar-track{
-                box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
-            }
-            
-            ::-webkit-scrollbar-thumb{
-                background: #089da1;
-                border-radius: 10px;
-            }
-            
-            
-            
-            .arrivals{
-                width: 100%;
-                height: 65vh;
-                margin-bottom: 35px;
-                padding: 0 70px;
-            }
-            
-            .arrivals h1{
-                font-size: 50px;
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                margin-top: 80px;
-            }
-            
-            .arrivals .arrivals_box{
-                width: 95%;
-                margin-left: 100px;
-                margin-top: 80px;
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-gap: 0;
-            }
-            
-            
-            .arrivals .arrivals_box .arrivals_card{
-                width: 250px;
-                height: 360px;
-                text-align: center;
-                padding: 5px;
-                border: 1px solid #919191;
-                margin: 20px;
-                transition: 0.3s;
-            }
-            
-            
-            .arrivals .arrivals_box .arrivals_card:hover{
-                box-shadow: 0 0 5px #089da1;
-                transform: scale(1.1);
-            }
-            
-            .arrivals .arrivals_box .arrivals_card .arrivals_image{
-                width: 150px;
-                height: 220px;
-                margin: 0 auto;
-                cursor: pointer;
-                box-shadow: 0 0 8px rgba(0,0,0,0.5);
-                overflow: hidden;
-            }
-            
-            .arrivals .arrivals_box .arrivals_card .arrivals_image img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-                transition: 0.3s;
-            }
-            
-            
-            .arrivals .arrivals_box .arrivals_card:hover .arrivals_image img{
-                transform: scale(1.1);
-            }
-            
-            
-            .arrivals .arrivals_box .arrivals_card .arrivals_tag p{
-                font-family: queen of camelot;
-                font-size: 20px;
-                margin: 12px;
-            }
-            
-            .arrivals .arrivals_box .arrivals_card .arrivals_tag .arrivals_icon{
-                color: #089da1;
-                margin-bottom: 18px;
-            }
-            
-            .arrivals .arrivals_box .arrivals_card .arrivals_tag .arrivals_btn{
-                padding: 6px 20px;
-                border: 2px solid #089da1;
-                text-decoration: none;
-                background-color: #089da1;
-                color: #000;
-                font: bold;
-            }
-            
-            
-            
-            
-            
-            
-            .reviews{
-                width: 100%;
-                height: 18vh;
-                margin-bottom: 35px;
-                padding: 0 70px;
-            }
-            
-            .reviews h1{
-                text-align: center;
-                font-size: 50px;
-                margin-top: 35px;
-            }
-            
-            .reviews .review_box{
-                width: 95%;
-                height: 58vh;
-                margin: 20px auto;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            .reviews .review_box .review_card{
-                width: 400px;
-                height: 470px;
-                box-shadow: 0 0 8px #089da1;
-                padding: 15px;
-                margin: 0 15px;
-                transition: 0.3s;
-            }
-            
-            .reviews .review_box .review_card:hover{
-                transform: scale(1.1);
-            }
-            
-            .reviews .review_box .review_card i{
-                float: right;
-                font-size: 100px;
-                position: relative;
-                bottom: 20px;
-                color: #ceb8b8;
-            }
-            
-            .reviews .review_box .review_card .card_top img{
-                width: 100px;
-                border-radius: 50%;
-                margin-bottom: 50px;
-            }
-            
-            .reviews .review_box .review_card .card p{
-                margin: 10px 0 10px 0;
-                text-align: justify;
-                line-height: 22px;
-            }
-            
-            .reviews .review_box .review_card .card .review_icon i{
-                font-size: 16px;
-                float: left;
-                margin-top: 20px;
-                color: #089da1;
-                padding: 0 1px;
-            }
-            
-            
-            
-            
-            
-            
-            .banner{
-                width: 100%;
-                height: 45vh;
-                background-image: url(banner1.jpg);
-                background-position: center;
-                background-size: cover;
-            }
-            
-            
-            
-            
-            
-            
-            .blog{
-                width: 100%;
-                height: 90vh;
-                margin-top: 55px;
-            }
-            
-            .blog h1{
-                text-align: center;
-                font-size: 50px;
-                margin-top: 80px;
-                margin-bottom: 30px;
-            }
-            
-            .blog .blog_box{
-                width: 95%;
-                height: 60vh;
-                margin-left: 75px;
-                margin-top: 80px;
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-gap: 0;
-            }
-            
-            .blog .blog_box .blog_card{
-                margin: 20px;
-                width: 500px;
-                height: 600px;
-                text-align: center;
-                box-shadow: 0 0 8px rgba(0,0,0,0.5);
-                padding: 15px;
-                transition: 0.3s;
-            }
-            
-            .blog .blog_box .blog_card:hover{
-                transform: scale(1.1);
-            }
-            
-            .blog .blog_box .blog_card .blog_img{
-                width: 470px;
-                height: 300px;
-                overflow: hidden;
-            }
-            
-            .blog .blog_box .blog_card .blog_img img{
-                width: 200px;
-                height: 300px;
-                object-fit: cover;
-                object-position: center;
-            }
-            
-            .blog .blog_box .blog_card .blog_tag{
-                padding: 20px;
-            }
-            
-            .blog .blog_box .blog_card .blog_tag h2{
-                color: #089da1;
-            }
-            
-            .blog .blog_box .blog_card .blog_tag p{
-                margin-top: 10px;
-                text-align: justify;
-                line-height: 22px;
-            }
-            
-            .blog .blog_box .blog_card .blog_tag .blog_icon{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-top: 20px;
-                color: #089da1;
-                cursor: pointer;
-            }
-            
-            
-            
-            
-            
-            
-            footer{
-                width: 100%;
-                background: #eaeaea;
-            }
-            
-            footer .footer_main{
-                width: 100%;
-                display: flex;
-                justify-content: space-around;
-            }
-            
-            footer .footer_main .tag img{
-                width: 300px;
-                padding: 15px;
-            }
-            
-            footer .footer_main .tag p{
-                width: 250px;
-                line-height: 22px;
-                text-align: justify;
-            }
-            
-            footer .footer_main .tag h1{
-                font-size: 25px;
-                margin: 25px 0;
-                color: #000;
-            }
-            
-            footer .footer_main .tag a{
-                display: block;
-                color: black;
-                text-decoration: none;
-                margin: 10px 0;
-                cursor: pointer;
-            }
-            
-            footer .footer_main .tag i{
-                margin-right: 10px;
-            }
-            
-            footer .footer_main .tag .social_link i{
-                margin: 0 5px;
-                cursor: pointer;
-            }
-            
-            footer .footer_main .tag .search_bar{
-                width: 230px;
-                height: 30px;
-                background: rgba(202 202 202);
-                border-radius: 25px;
-            }
-            
-            footer .footer_main .tag .search_bar input{
-                width: 200px;
-                padding: 2px 0;
-                position: relative;
-                top: 17%;
-                left: 6%;
-                border: none;
-                outline: none;
-                font-size: 13px;
-                background: none;
-            }
-            
-            footer .footer_main .tag .search_bar button{
-                padding: 7px 15px;
-                background: #089da1;
-                border: none;
-                margin-top: 15px;
-                border-radius: 25px;
-                color: #fff;
-                cursor: pointer;
-            }
-            
-            footer .end{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 15px;
-                color: #000;
-            }
-            
-            footer .end span{
-                color: #089da1;
-                margin-left: 10px;
-            }
-        </style>
-        <h1><a name="Home"></a></h1>
+      section {
+        width: 100%;
+        height: 100vh;
+        background-image: url("{% static 'images/images.jpeg' %}");
+        background-size: cover;
+        background-position: center;
+      }
 
-        <section>
+      section nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        box-shadow: 0 0 10px #089da1;
+        background: #fff;
+        position: fixed;
+        left: 0;
+        z-index: 100;
+      }
 
-            <nav>   
-        
-                <div class="logo">
-                    <img src="{% static 'images/logonew.jpg' %}" height="90" width="50">
-                </div>
+      section nav .logo img {
+        width: 120px;
+        height: 120px;
+        cursor: pointer;
+        margin: 0 10px;
+      }
 
-                <h1 style="color:red;"><big><b>" वीणा पुस्तक रंजित हस्ते, भगवती भारती देवी नमस्ते "</b></big></h1>
+      section nav h1 {
+        font-size: 20px;
+      }
 
-                <ul>
-                    <li><b><big><a href="#Home">Home</a></big></b></li>
-                    <li><b><big><a href="#Featured">Featured</a></big></b></li>
-                    <li><b><big><a href="#Trending">Trending</a></big></b></li>
-                    <li><b><big><a href="#Authentic">Authentic</a></big></b></li>
-                    <li><b><big><a href="#Arrivals">Arrivals</a></big></b></li>
-                    <li><b><big><a href="#Blog">Blog</a></big></b></li>
-                </ul>
+      section nav ul {
+        list-style: none;
+      }
 
-               
-                {% if request.user.is_authenticated%}
+      section nav li {
+        display: inline-block;
+        padding: 5px 15px;
+        font-size: 20px;
+        transition: 0.3s;
+      }
 
-                <div class="social_icon">
-                    <big><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></big>
+      section nav li:hover {
+        transform: scale(1.6);
+      }
 
-                    <big><a href="{% url 'logout' %}" title="Click to Logout"><i class="fa-solid fa-user-slash"></i></a></big>
+      section nav li a {
+        text-decoration: none;
+        color: #000;
+      }
 
-                </div>
+      section nav li a:hover {
+        color: #089da1;
+        transform: scale(1.1);
+      }
 
-                {% else %}
-                <div class="social_icon">
-                    <big><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></big>
+      section nav .social_icon i {
+        color: #000;
+        margin: 0 10px;
+        font-size: 25px;
+        transition: 0.3s;
+      }
 
-                    <big><a href="{% url 'login' %}" title="Click to Login"><i class="fa-sharp fa-solid fa-user"></i></a></big>
+      section nav .social_icon i:hover {
+        color: #089da1;
+        cursor: pointer;
+        transform: scale(1.6);
+      }
 
-                </div>
-                {% endif %}
-            </nav>
+      section .main {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        top: 10%;
+      }
 
-            <div class="main">
+      section .main h1 {
+        position: relative;
+        font-size: 55px;
+        top: 80px;
+        left: 25px;
+      }
 
-                <div class="main_tag">
-                    <h1>WELCOME TO<br>
-                        <span>पुसtaak</span></h1>
+      section .main h1 span {
+        color: #089da1;
+      }
 
-                    <p>NAMASTE !!  We are gratified to have you with us . You are now a part of this website . We appreciate your interest . We will do our best to match up to your requirements . We work vehemently to create the best possible experience for our visitors.
-                    </p>
-                </div>
+      section .main p {
+        width: 650px;
+        text-align: justify;
+        line-height: 29px;
+        position: relative;
+        font-size: 24px;
+        font-family: Arial, Helvetica;
+        top: 100px;
+        left: 25px;
+      }
 
-                <div class="main_img">
-                    <img src="{% static 'images/ebooksimage.jpg' %}">
-                </div>
+      .btn {
+        background-color: #089da1;
+        color: white;
+        padding: 20px;
+        font-size: 19px;
+        position: relative;
+        top: 120px;
+        left: 25px;
+        text-decoration: none;
+      }
 
-            </div>
+      .dropdown {
+        position: absolute;
+        display: inline-block;
+      }
 
-        </section>
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        z-index: 1;
+      }
 
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
 
+      .dropdown-content a:hover {
+        background-color: #ddd;
+      }
 
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
 
-        <!--Services-->
+      .btn:hover .dropdown:hover .btn {
+        background-color: #0b7dda;
+      }
 
-        <div class="services">
+      section .main .main_img img {
+        width: 780px;
+        position: relative;
+        top: 90px;
+        left: 20px;
+      }
 
-            <div class="services_box">
-                <div class="services_card">
-                    <i class="fa-solid fa-truck-fast"></i>
-                    <h3>Fast Delivery</h3>
-                </div>
+      .services {
+        width: 100%;
+        height: auto;
+        margin: 35px 0;
+      }
 
-                <div class="services_card">
-                    <i class="fa-solid fa-headset"></i>
-                    <h3>24 x 7 Services</h3>
-                </div>
+      .services .services_box {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
 
-                <div class="services_card">
-                    <i class="fa-solid fa-tags"></i>
-                    <h3>Best Deals</h3>
-                </div>
+      .services .services_box .services_card {
+        text-align: center;
+        width: 250px;
+        height: 150px;
+        box-shadow: 0 0 8px #089da1;
+        padding: 30px 10px;
+        transition: 0.3s;
+      }
 
-                <div class="services_card">
-                    <i class="fa-solid fa-lock"></i>
-                    <h3>Secure Payment</h3>
-                </div>
+      .services .services_box .services_card:hover {
+        transform: scale(1.1);
+      }
 
-            </div>
-  
+      .services .services_box .services_card i {
+        color: #089da1;
+        font-size: 45px;
+        margin-bottom: 15px;
+        cursor: pointer;
+      }
+      .services .services_box .services_card h3 {
+        margin-bottom: 10px;
+        font-size: 25px;
+        font: bold;
+      }
+
+      .services .services_box .services_card p {
+        font-size: 20px;
+      }
+
+      .about {
+        width: 100;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .about .about_image img {
+        width: 800px;
+      }
+
+      .about .about_tag h1 {
+        font-size: 50px;
+        position: relative;
+        bottom: 35px;
+      }
+
+      .about .about_tag p {
+        line-height: 27px;
+        width: 600px;
+        font-size: 24px;
+        text-align: justify;
+        margin-bottom: 25px;
+      }
+
+      .featured_boks {
+        width: 100%;
+        height: 65vh;
+        padding: 0 70px;
+      }
+
+      .featured_boks h1 {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin-top: 150px;
+        font-size: 50px;
+      }
+
+      .featured_boks .featured_book_box {
+        width: 95%;
+        height: 60vh;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        overflow: hidden;
+        overflow-x: scroll;
+      }
+
+      .featured_boks .featured_book_box .featured_book_card {
+        width: 250px;
+        height: 420px;
+        text-align: center;
+        padding: 5px;
+        border: 1px solid #919191;
+        margin: auto 20px;
+        transition: 0.3s;
+      }
+
+      .featured_boks .featured_book_box .featured_book_card:hover {
+        box-shadow: 0 0 5px #089da1;
+        transform: scale(1.1);
+      }
+
+      .featured_boks .featured_book_box .featured_book_card .featurde_book_img {
+        width: 150px;
+        height: 220px;
+        margin: 0 auto;
+        cursor: pointer;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+
+      .featured_boks
+        .featured_book_box
+        .featured_book_card
+        .featurde_book_img
+        img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: 0.3s;
+      }
+
+      .featured_boks
+        .featured_book_box
+        .featured_book_card:hover
+        .featurde_book_img
+        img {
+        transform: scale(1.1);
+      }
+
+      .featured_boks
+        .featured_book_box
+        .featured_book_card
+        .featurde_book_tag
+        h2 {
+        margin: 12px;
+      }
+
+      .featured_boks
+        .featured_book_box
+        .featured_book_card
+        .featurde_book_tag
+        .writer {
+        color: #3d3a3a;
+      }
+
+      .featured_boks
+        .featured_book_box
+        .featured_book_card
+        .featurde_book_tag
+        .categories {
+        color: #089da1;
+        margin-top: 8px;
+      }
+
+      .featured_boks
+        .featured_book_box
+        .featured_book_card
+        .featurde_book_tag
+        .book_price {
+        margin-top: 8px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .featured_boks
+        .featured_book_box
+        .featured_book_card
+        .featurde_book_tag
+        .book_price
+        sub {
+        font-weight: 100;
+        padding: 0 5px;
+      }
+
+      .featured_boks
+        .featured_book_box
+        .featured_book_card
+        .featurde_book_tag
+        .f_btn {
+        padding: 8px 20px;
+        border: 2px solid #089da1;
+        text-decoration: none;
+        background-color: #089da1;
+        color: #000;
+        font: bold;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 5px;
+      }
+
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #089da1;
+        border-radius: 10px;
+      }
+
+      .authentic {
+        width: 100%;
+        height: 65vh;
+        margin-bottom: 35px;
+        padding: 50px 50px;
+      }
+
+      .authentic h1 {
+        font-size: 50px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+      }
+
+      .authentic .authentic_box {
+        width: 95%;
+        margin-left: 110px;
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 0;
+      }
+
+      .authentic .authentic_box .authentic_card {
+        width: 250px;
+        height: 360px;
+        text-align: center;
+        padding: 5px;
+        border: 1px solid #919191;
+        margin: 20px;
+        transition: 0.3s;
+      }
+
+      .authentic .authentic_box .authentic_card:hover {
+        box-shadow: 0 0 5px #089da1;
+        transform: scale(1.1);
+      }
+
+      .authentic .authentic_box .authentic_card .authentic_image {
+        width: 150px;
+        height: 220px;
+        margin: 0 auto;
+        cursor: pointer;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+
+      .authentic .authentic_box .authentic_card .authentic_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: 0.3s;
+      }
+
+      .authentic .authentic_box .authentic_card:hover .authentic_image img {
+        transform: scale(1.1);
+      }
+
+      .authentic .authentic_box .authentic_card .authentic_tag p {
+        font-family: queen of camelot;
+        font-size: 20px;
+        margin: 12px;
+      }
+
+      .authentic .authentic_box .authentic_card .authentic_tag .authentic_icon {
+        color: #089da1;
+        margin-bottom: 18px;
+      }
+
+      .authentic .authentic_box .authentic_card .authentic_tag .authentic_btn {
+        padding: 6px 20px;
+        border: 2px solid #089da1;
+        text-decoration: none;
+        background-color: #089da1;
+        color: #000;
+        font: bold;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 5px;
+      }
+
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #089da1;
+        border-radius: 10px;
+      }
+
+      .trending {
+        width: 100%;
+        height: 45vh;
+        margin-bottom: 35px;
+        padding: 0 70px;
+      }
+
+      .trending h1 {
+        font-size: 50px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+      }
+
+      .trending .trending_box {
+        width: 95%;
+        height: 60vh;
+        margin: 0 auto;
+        margin-left: 70px;
+        margin-top: 80px;
+        margin-bottom: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 0;
+      }
+
+      .trending .trending_box .trending_card {
+        width: 250px;
+        height: 360px;
+        text-align: center;
+        padding: 5px;
+        border: 1px solid #919191;
+        margin: 20px;
+        transition: 0.3s;
+      }
+
+      .trending .trending_box .trending_card:hover {
+        box-shadow: 0 0 5px #089da1;
+        transform: scale(1.1);
+      }
+
+      .trending .trending_box .trending_card .trending_image {
+        width: 150px;
+        height: 220px;
+        margin: 0 auto;
+        cursor: pointer;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+
+      .trending .trending_box .trending_card .trending_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: 0.3s;
+      }
+
+      .trending .trending_box .trending_card:hover .trending_image img {
+        transform: scale(1.1);
+      }
+
+      .trending .trending_box .trending_card .trending_tag p {
+        font-family: queen of camelot;
+        font-size: 20px;
+        margin: 12px;
+      }
+
+      .trending .trending_box .trending_card .trending_tag .trending_icon {
+        color: #089da1;
+        margin-bottom: 18px;
+      }
+
+      .trending .trending_box .trending_card .trending_tag .trending_btn {
+        padding: 6px 20px;
+        border: 2px solid #089da1;
+        text-decoration: none;
+        background-color: #089da1;
+        color: #000;
+        font: bold;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 5px;
+      }
+
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #089da1;
+        border-radius: 10px;
+      }
+
+      .arrivals {
+        width: 100%;
+        height: 65vh;
+        margin-bottom: 35px;
+        padding: 0 70px;
+      }
+
+      .arrivals h1 {
+        font-size: 50px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+      }
+
+      .arrivals .arrivals_box {
+        width: 95%;
+        margin-left: 100px;
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 0;
+      }
+
+      .arrivals .arrivals_box .arrivals_card {
+        width: 250px;
+        height: 360px;
+        text-align: center;
+        padding: 5px;
+        border: 1px solid #919191;
+        margin: 20px;
+        transition: 0.3s;
+      }
+
+      .arrivals .arrivals_box .arrivals_card:hover {
+        box-shadow: 0 0 5px #089da1;
+        transform: scale(1.1);
+      }
+
+      .arrivals .arrivals_box .arrivals_card .arrivals_image {
+        width: 150px;
+        height: 220px;
+        margin: 0 auto;
+        cursor: pointer;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+
+      .arrivals .arrivals_box .arrivals_card .arrivals_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: 0.3s;
+      }
+
+      .arrivals .arrivals_box .arrivals_card:hover .arrivals_image img {
+        transform: scale(1.1);
+      }
+
+      .arrivals .arrivals_box .arrivals_card .arrivals_tag p {
+        font-family: queen of camelot;
+        font-size: 20px;
+        margin: 12px;
+      }
+
+      .arrivals .arrivals_box .arrivals_card .arrivals_tag .arrivals_icon {
+        color: #089da1;
+        margin-bottom: 18px;
+      }
+
+      .arrivals .arrivals_box .arrivals_card .arrivals_tag .arrivals_btn {
+        padding: 6px 20px;
+        border: 2px solid #089da1;
+        text-decoration: none;
+        background-color: #089da1;
+        color: #000;
+        font: bold;
+      }
+
+      .reviews {
+        width: 100%;
+        height: 18vh;
+        margin-bottom: 35px;
+        padding: 0 70px;
+      }
+
+      .reviews h1 {
+        text-align: center;
+        font-size: 50px;
+        margin-top: 35px;
+      }
+
+      .reviews .review_box {
+        width: 95%;
+        height: 58vh;
+        margin: 20px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .reviews .review_box .review_card {
+        width: 400px;
+        height: 470px;
+        box-shadow: 0 0 8px #089da1;
+        padding: 15px;
+        margin: 0 15px;
+        transition: 0.3s;
+      }
+
+      .reviews .review_box .review_card:hover {
+        transform: scale(1.1);
+      }
+
+      .reviews .review_box .review_card i {
+        float: right;
+        font-size: 100px;
+        position: relative;
+        bottom: 20px;
+        color: #ceb8b8;
+      }
+
+      .reviews .review_box .review_card .card_top img {
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 50px;
+      }
+
+      .reviews .review_box .review_card .card p {
+        margin: 10px 0 10px 0;
+        text-align: justify;
+        line-height: 22px;
+      }
+
+      .reviews .review_box .review_card .card .review_icon i {
+        font-size: 16px;
+        float: left;
+        margin-top: 20px;
+        color: #089da1;
+        padding: 0 1px;
+      }
+
+      .banner {
+        width: 100%;
+        height: 45vh;
+        background-image: url(banner1.jpg);
+        background-position: center;
+        background-size: cover;
+      }
+
+      .blog {
+        width: 100%;
+        height: 90vh;
+        margin-top: 55px;
+      }
+
+      .blog h1 {
+        text-align: center;
+        font-size: 50px;
+        margin-top: 80px;
+        margin-bottom: 30px;
+      }
+
+      .blog .blog_box {
+        width: 95%;
+        height: 60vh;
+        margin-left: 75px;
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 0;
+      }
+
+      .blog .blog_box .blog_card {
+        margin: 20px;
+        width: 500px;
+        height: 600px;
+        text-align: center;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        padding: 15px;
+        transition: 0.3s;
+      }
+
+      .blog .blog_box .blog_card:hover {
+        transform: scale(1.1);
+      }
+
+      .blog .blog_box .blog_card .blog_img {
+        width: 470px;
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .blog .blog_box .blog_card .blog_img img {
+        width: 200px;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .blog .blog_box .blog_card .blog_tag {
+        padding: 20px;
+      }
+
+      .blog .blog_box .blog_card .blog_tag h2 {
+        color: #089da1;
+      }
+
+      .blog .blog_box .blog_card .blog_tag p {
+        margin-top: 10px;
+        text-align: justify;
+        line-height: 22px;
+      }
+
+      .blog .blog_box .blog_card .blog_tag .blog_icon {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        color: #089da1;
+        cursor: pointer;
+      }
+
+      footer {
+        width: 100%;
+        background: #eaeaea;
+      }
+
+      footer .footer_main {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      footer .footer_main .tag img {
+        width: 300px;
+        padding: 15px;
+      }
+
+      footer .footer_main .tag p {
+        width: 250px;
+        line-height: 22px;
+        text-align: justify;
+      }
+
+      footer .footer_main .tag h1 {
+        font-size: 25px;
+        margin: 25px 0;
+        color: #000;
+      }
+
+      footer .footer_main .tag a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        margin: 10px 0;
+        cursor: pointer;
+      }
+
+      footer .footer_main .tag i {
+        margin-right: 10px;
+      }
+
+      footer .footer_main .tag .social_link i {
+        margin: 0 5px;
+        cursor: pointer;
+      }
+
+      footer .footer_main .tag .search_bar {
+        width: 230px;
+        height: 30px;
+        background: rgba(202 202 202);
+        border-radius: 25px;
+      }
+
+      footer .footer_main .tag .search_bar input {
+        width: 200px;
+        padding: 2px 0;
+        position: relative;
+        top: 17%;
+        left: 6%;
+        border: none;
+        outline: none;
+        font-size: 13px;
+        background: none;
+      }
+
+      footer .footer_main .tag .search_bar button {
+        padding: 7px 15px;
+        background: #089da1;
+        border: none;
+        margin-top: 15px;
+        border-radius: 25px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      footer .end {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        color: #000;
+      }
+
+      footer .end span {
+        color: #089da1;
+        margin-left: 10px;
+      }
+    </style>
+    <h1><a name="Home"></a></h1>
+
+    <section>
+      <nav>
+        <div class="logo">
+          <img src="{% static 'images/logonew.jpg' %}" height="90" width="50" />
         </div>
 
-        
+        <h1 style="color: red">
+          <big><b>" वीणा पुस्तक रंजित हस्ते, भगवती भारती देवी नमस्ते "</b></big>
+        </h1>
 
+        <ul>
+          <li>
+            <b
+              ><big><a href="#Home">Home</a></big></b
+            >
+          </li>
+          <li>
+            <b
+              ><big><a href="#Featured">Featured</a></big></b
+            >
+          </li>
+          <li>
+            <b
+              ><big><a href="#Trending">Trending</a></big></b
+            >
+          </li>
+          <li>
+            <b
+              ><big><a href="#Authentic">Authentic</a></big></b
+            >
+          </li>
+          <li>
+            <b
+              ><big><a href="#Arrivals">Arrivals</a></big></b
+            >
+          </li>
+          <li>
+            <b
+              ><big><a href="{% url 'blog' %}">Blog</a></big></b
+            >
+          </li>
+        </ul>
 
-        <!--About-->
+        {% if request.user.is_authenticated%}
 
-        <div class="about" style="background-color: rgb(156, 170, 203);">
+        <div class="social_icon">
+          <big
+            ><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a
+          ></big>
 
-            <div class="about_image">
-                <img src="{% static 'images/ebook.png' %}" height="900" width="2000">
-            </div>
-
-            <div class="about_tag">
-                <h1>About Us</h1>
-                <p align-items="center">
-                    Hi there! Great interecting with you. Since everything is connected to the technology then our team aimed to make it easy to get available books of your choice. This online book store website <b>पुसtaak</b> exists to provide you trusted learning and a window to inflate your knowledge about diverse subject matters. We are here to connect you guys to the bookish world. <br><br>That's the thing about books. They let you travel without moving your feet.
-                </p>
-            </div>
-
+          <big
+            ><a href="{% url 'logout' %}" title="Click to Logout"
+              ><i class="fa-solid fa-user-slash"></i></a
+          ></big>
         </div>
 
+        {% else %}
+        <div class="social_icon">
+          <big
+            ><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a
+          ></big>
 
+          <big
+            ><a href="{% url 'login' %}" title="Click to Login"
+              ><i class="fa-sharp fa-solid fa-user"></i></a
+          ></big>
+        </div>
+        {% endif %}
+      </nav>
 
+      <div class="main">
+        <div class="main_tag">
+          <h1>
+            WELCOME TO<br />
+            <span>पुसtaak</span>
+          </h1>
 
-
-        <!--Books-->
-
-        <h1><a name="Featured"></a></h1>
-
-        <div class="featured_boks">
-
-            <h1><b>Featured Books</b></h1>
-
-            <div class="featured_book_box">
-
-                <div class="featured_book_card">
-
-                    <div class="featurde_book_img">
-                        <img src="{% static 'images/dsa.jpg' %}">
-                    </div>
- 
-                    <div class="featurde_book_tag">
-                        <h2>Featured Books</h2>
-                        <p class="writer">Rudolph Russell</p>
-                        <div class="categories">Data Structure and Algorithm</div>
-                        <p class="book_price">$25.50<sub><del>$28.60</del></sub></p>
-                        <a href="cart.html" class="f_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="featured_book_card">
-
-                    <div class="featurde_book_img">
-                        <img src="{% static 'images/ansic.jpg' %}">
-                    </div>
-
-                    <div class="featurde_book_tag">
-                        <h2>Featured Books</h2>
-                        <p class="writer">E. Balagurusamy</p>
-                        <div class="categories">Coding Language</div>
-                        <p class="book_price">$27.30<sub><del>$30.45</del></sub></p>
-                        <a href="cart.html" class="f_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="featured_book_card">
-
-                    <div class="featurde_book_img">
-                        <img src="{% static 'images/ai.jpeg' %}">
-                    </div>
-
-                    <div class="featurde_book_tag">
-                        <h2>Featured Books</h2>
-                        <p class="writer">Charu C. Aggarwal</p>
-                        <div class="categories">Artificial Intelligence</div>
-                        <p class="book_price">$25.99<sub><del>$32.15</del></sub></p>
-                        <a href="cart.html" class="f_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="featured_book_card">
-
-                    <div class="featurde_book_img">
-                        <img src="{% static 'images/aem.jpg' %}">
-                    </div>
-
-                    <div class="featurde_book_tag">
-                        <h2>Featured Books</h2>
-                        <p class="writer">H. K. Dass</p>
-                        <div class="categories">Mathematics</div>
-                        <p class="book_price">$28.45<sub><del>$34.57</del></sub></p>
-                        <a href="cart.html" class="f_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="featured_book_card">
-
-                    <div class="featurde_book_img">
-                        <img src="{% static 'images/bee.jpg' %}">
-                    </div>
-
-                    <div class="featurde_book_tag">
-                        <h2>Featured Books</h2>
-                        <p class="writer">B. R. Patil</p>
-                        <div class="categories">Basic Electronics and Electicals</div>
-                        <p class="book_price">$23.65<sub><del>$26.40</del></sub></p>
-                        <a href="cart.html" class="f_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="featured_book_card">
-
-                    <div class="featurde_book_img">
-                        <img src="{% static 'images/ed.jpg' %}">
-                    </div>
-
-                    <div class="featurde_book_tag">
-                        <h2>Featured Books</h2>
-                        <p class="writer">K. Venugopal<br>V. Prabhu Raja</p>
-                        <div class="categories">Engineering Drawings</div>
-                        <p class="book_price">$29.60<sub><del>$32.30</del></sub></p>
-                        <a href="cart.html" class="f_btn">Add to Cart</a>
-                    </div>
-
-                </div>    
-
-                <div class="featured_book_card">
-
-                    <div class="featurde_book_img">
-                        <img src="{% static 'images/phy.jpg' %}">
-                    </div>
-
-                    <div class="featurde_book_tag">
-                        <h2>Featured Books</h2>
-                        <p class="writer">Dr. P. Manikandan<br>Dr. S. Rafi Ahmed</p>
-                        <div class="categories">Physics</div>
-                        <p class="book_price">$28.30<sub><del>$30.56</del></sub></p>
-                        <a href="#" class="f_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-            </div>
-            
+          <p>
+            NAMASTE !! We are gratified to have you with us . You are now a part
+            of this website . We appreciate your interest . We will do our best
+            to match up to your requirements . We work vehemently to create the
+            best possible experience for our visitors.
+          </p>
         </div>
 
+        <div class="main_img">
+          <img src="{% static 'images/ebooksimage.jpg' %}" />
+        </div>
+      </div>
+    </section>
 
+    <!--Services-->
 
-
-        <!--Trending-->
-
-        <h1><a name="Trending"></a></h1>
-        <br>
-        <br>
-        <br>
-
-        <div class="trending">
-
-            <h1><b>Trending</b></h1>
-
-            <div class="trending_box">
-
-                <div class="trending_card">
-
-                    <div class="trending_image">
-                        <img src="{% static 'images/gitanjali.jpg' %}">
-                    </div>
-
-                    <div class="trending_tag">
-                        <p>Trending</p>
-                        <div class="trending_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="trending_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="trending_card">
-
-                    <div class="trending_image">
-                        <img src="{% static 'images/parineeta.jpg' %}">
-                    </div>
-
-                    <div class="trending_tag">
-                        <p>Trending</p>
-                        <div class="trending_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="trending_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="trending_card">
-
-                    <div class="trending_image">
-                        <img src="{% static 'images/sherlock.jpg' %}">
-                    </div>
-
-                    <div class="trending_tag">
-                        <p>Trending</p>
-                        <div class="trending_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="trending_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="trending_card">
-
-                    <div class="trending_image">
-                        <img src="{% static 'images/hamlet.jpg' %}">
-                    </div>
-
-                    <div class="trending_tag">
-                        <p>Trending</p>
-                        <div class="trending_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="trending_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="trending_card">
-
-                    <div class="trending_image">
-                        <img src="{% static 'images/harry potter.jpg' %}">
-                    </div>
-
-                    <div class="trending_tag">
-                        <p>Trending</p>
-                        <div class="trending_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="trending_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-            </div>
+    <div class="services">
+      <div class="services_box">
+        <div class="services_card">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h3>Fast Delivery</h3>
         </div>
 
-
-
-
-        <!--Authentic-->
-
-        <h1><a name="Authentic"></a></h1>
-        <br>
-        <br>
-        <br>
-
-        <div class="authentic">
-
-            <h1><b>Authentics</b></h1>
-
-            <div class="authentic_box">
-
-                <div class="authentic_card">
-
-                    <div class="authentic_image">
-                        <img src="{% static 'images/rajarshi.jpg' %}">
-                    </div>
-
-                    <div class="authentic_tag">
-                        <p>Authentics</p>
-                        <div class="authentic_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="authentic_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="authentic_card">
-
-                    <div class="authentic_image">
-                        <img src="{% static 'images/rajmala.jpg' %}">
-                    </div>
-
-                    <div class="authentic_tag">
-                        <p>Authentics</p>
-                        <div class="authentic_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="authentic_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="authentic_card">
-
-                    <div class="authentic_image">
-                        <img src="{% static 'images/mahabharat.jpg' %}">
-                    </div>
-
-                    <div class="authentic_tag">
-                        <p>Authentics</p>
-                        <div class="authentic_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="authentic_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="authentic_card">
-
-                    <div class="authentic_image">
-                        <img src="{% static 'images/apj.jpg' %}">
-                    </div>
-
-                    <div class="authentic_tag">
-                        <p>Authentics</p>
-                        <div class="authentic_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="authentic_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-            </div>
+        <div class="services_card">
+          <i class="fa-solid fa-headset"></i>
+          <h3>24 x 7 Services</h3>
         </div>
 
-        
-
-
-        <!--Arrivals-->
-
-        <h1><a name="Arrivals"></a></h1>
-        <br>
-        <br>
-        <br>
-
-        <div class="arrivals">
-
-            <h1><b>New Arrivals</b></h1>
-
-            <div class="arrivals_box">
-
-                <div class="arrivals_card">
-
-                    <div class="arrivals_image">
-                        <img src="{% static 'images/na1.jpg' %}">
-                    </div>
-
-                    <div class="arrivals_tag">
-                        <p>New Arrivals</p>
-                        <div class="arrivals_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="arrivals_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="arrivals_card">
-
-                    <div class="arrivals_image">
-                        <img src="{% static 'images/na2.webp' %}">
-                    </div>
-
-                    <div class="arrivals_tag">
-                        <p>New Arrivals</p>
-                        <div class="arrivals_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="arrivals_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="arrivals_card">
-
-                    <div class="arrivals_image">
-                        <img src="{% static 'images/na3.jpg' %}">
-                    </div>
-
-                    <div class="arrivals_tag">
-                        <p>New Arrivals</p>
-                        <div class="arrivals_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="arrivals_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-                <div class="arrivals_card">
-
-                    <div class="arrivals_image">
-                        <img src="{% static 'images/na4.webp' %}">
-                    </div>
-
-                    <div class="arrivals_tag">
-                        <p>New Arrivals</p>
-                        <div class="arrivals_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-                        <a href="#" class="arrivals_btn">Add to Cart</a>
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div class="services_card">
+          <i class="fa-solid fa-tags"></i>
+          <h3>Best Deals</h3>
         </div>
 
+        <div class="services_card">
+          <i class="fa-solid fa-lock"></i>
+          <h3>Secure Payment</h3>
+        </div>
+      </div>
+    </div>
 
+    <!--About-->
 
+    <div class="about" style="background-color: rgb(156, 170, 203)">
+      <div class="about_image">
+        <img src="{% static 'images/ebook.png' %}" height="900" width="2000" />
+      </div>
 
+      <div class="about_tag">
+        <h1>About Us</h1>
+        <p align-items="center">
+          Hi there! Great interecting with you. Since everything is connected to
+          the technology then our team aimed to make it easy to get available
+          books of your choice. This online book store website
+          <b>पुसtaak</b> exists to provide you trusted learning and a window to
+          inflate your knowledge about diverse subject matters. We are here to
+          connect you guys to the bookish world. <br /><br />That's the thing
+          about books. They let you travel without moving your feet.
+        </p>
+      </div>
+    </div>
 
-        <!--reviews-->
+    <!--Books-->
 
-        <div class="reviews">
-            <h1>Reviews</h1>
+    <h1><a name="Featured"></a></h1>
 
-            <div class="review_box">
+    <div class="featured_boks">
+      <h1><b>Featured Books</b></h1>
 
-                <div class="review_card">
+      <div class="featured_book_box">
+        <div class="featured_book_card">
+          <div class="featurde_book_img">
+            <img src="{% static 'images/dsa.jpg' %}" />
+          </div>
 
-                    <i class="fa-solid fa-quote-right"></i>
-                    <div class="card_top">
-                        <img src="{% static 'images/dummy.png' %}">
-                    </div>
-
-                    <div class="card">
-                        <h2>Ram</h2>
-                        <p>This book-related website has become an indispensable tool in my reading journey. Its user-friendly interface, vast library, engaged community, commitment to diversity, and additional resources make it a standout platform for book lovers. I highly recommend exploring this website to enhance your reading experience and discover your next literary obsession.
-                        </p>
-                        <div class="review_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="review_card">
-
-                    <i class="fa-solid fa-quote-right"></i>
-
-                    <div class="card_top">
-                        <img src="{% static 'images/dummy.png' %}">
-                    </div>
-
-                    <div class="card">
-
-                        <h2>Priya Deb</h2>
-                        <p> I recently stumbled upon a fantastic book-related website that I cannot recommend enough! This online platform has truly revolutionized the way I discover and explore new books. From its user-friendly interface to its vast collection of literary treasures, this website has become my go-to resource for all things bookish.
-                        </p>
-
-                        <div class="review_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="review_card">
-
-                    <i class="fa-solid fa-quote-right"></i>
-
-                    <div class="card_top">
-                        <img src="{% static 'images/dummy.png' %}">
-                    </div>
-
-                    <div class="card">
-
-                        <h2>Sham Roy</h2>
-                        <p>The website's design is sleek and intuitive. Navigating through its various sections is a breeze, making it effortless to find exactly what I'm looking for. The layout is visually appealing and organized, ensuring a seamless browsing experience. Whether you're a seasoned bookworm or a casual reader, this website caters to all tastes and preferences.
-                        </p>
-
-                        <div class="review_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="review_card">
-
-                    
-                    <i class="fa-solid fa-quote-right"></i>
-
-                    <div class="card_top">
-                        <img src="{% static 'images/dummy.png' %}">
-                    </div>
-
-                    <div class="card">
-
-                        <h2>Nita B</h2>
-                        <p>The platform encourages users to share their thoughts, recommendations, and even create personalized reading lists. I've had the pleasure of connecting with like-minded readers who share my passion for literature, sparking engaging discussions and discovering hidden literary gems I may have otherwise missed.
-                        </p>
-
-                        <div class="review_icon">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half-stroke"></i>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
+          <div class="featurde_book_tag">
+            <h2>Featured Books</h2>
+            <p class="writer">Rudolph Russell</p>
+            <div class="categories">Data Structure and Algorithm</div>
+            <p class="book_price">
+              $25.50<sub><del>$28.60</del></sub>
+            </p>
+            <a href="cart.html" class="f_btn">Add to Cart</a>
+          </div>
         </div>
 
+        <div class="featured_book_card">
+          <div class="featurde_book_img">
+            <img src="{% static 'images/ansic.jpg' %}" />
+          </div>
 
-
-
-        <!--Banner-->
-
-        <div class="banner"></div>
-
-
-
-
-        <!--Blog-->
-
-        <h1><a name="Blog"></a></h1>
-        <br>
-        <br>
-        <br>
-
-        <div class="blog">
-
-            <h1><b>Our Blog</b></h1>
-
-            <div class="blog_box">
-
-                <div class="blog_card">
-                    <div class="blog_img">
-                        <img src="{% static 'images/rajmala.jpg' %}">
-                    </div>
-                    <div class="blog_tag">
-                        <h2>Blogger</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et maiores architecto aut assumenda labore quam reprehenderit magni iusto, nam quo, omnis facilis, delectus beatae nihil! Totam similique temporibus voluptatibus nisi.
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium voluptas iure, iusto ut dolorem veniam ipsam deserunt quod ad. Dicta soluta nulla, omnis et aperiam dolor deserunt consectetur quas quo!
-                        </p>
-                        <div class="blog_icon">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="blog_card">
-                    <div class="blog_img">
-                        <img src="{% static 'images/hamlet.jpg' %}">
-                    </div>
-                    <div class="blog_tag">
-                        <h2>Blogger</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et maiores architecto aut assumenda labore quam reprehenderit magni iusto, nam quo, omnis facilis, delectus beatae nihil! Totam similique temporibus voluptatibus nisi.
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium voluptas iure, iusto ut dolorem veniam ipsam deserunt quod ad. Dicta soluta nulla, omnis et aperiam dolor deserunt consectetur quas quo!
-                        </p>
-                        <div class="blog_icon">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="blog_card">
-                    <div class="blog_img">
-                        <img src="{% static 'images/gitanjali.jpg' %}">
-                    </div>
-                    <div class="blog_tag">
-                        <h2>Blogger</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et maiores architecto aut assumenda labore quam reprehenderit magni iusto, nam quo, omnis facilis, delectus beatae nihil! Totam similique temporibus voluptatibus nisi.
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium voluptas iure, iusto ut dolorem veniam ipsam deserunt quod ad. Dicta soluta nulla, omnis et aperiam dolor deserunt consectetur quas quo!
-                        </p>
-                        <div class="blog_icon">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+          <div class="featurde_book_tag">
+            <h2>Featured Books</h2>
+            <p class="writer">E. Balagurusamy</p>
+            <div class="categories">Coding Language</div>
+            <p class="book_price">
+              $27.30<sub><del>$30.45</del></sub>
+            </p>
+            <a href="cart.html" class="f_btn">Add to Cart</a>
+          </div>
         </div>
 
+        <div class="featured_book_card">
+          <div class="featurde_book_img">
+            <img src="{% static 'images/ai.jpeg' %}" />
+          </div>
 
+          <div class="featurde_book_tag">
+            <h2>Featured Books</h2>
+            <p class="writer">Charu C. Aggarwal</p>
+            <div class="categories">Artificial Intelligence</div>
+            <p class="book_price">
+              $25.99<sub><del>$32.15</del></sub>
+            </p>
+            <a href="cart.html" class="f_btn">Add to Cart</a>
+          </div>
+        </div>
 
+        <div class="featured_book_card">
+          <div class="featurde_book_img">
+            <img src="{% static 'images/aem.jpg' %}" />
+          </div>
 
+          <div class="featurde_book_tag">
+            <h2>Featured Books</h2>
+            <p class="writer">H. K. Dass</p>
+            <div class="categories">Mathematics</div>
+            <p class="book_price">
+              $28.45<sub><del>$34.57</del></sub>
+            </p>
+            <a href="cart.html" class="f_btn">Add to Cart</a>
+          </div>
+        </div>
 
-        <!--Footer-->
+        <div class="featured_book_card">
+          <div class="featurde_book_img">
+            <img src="{% static 'images/bee.jpg' %}" />
+          </div>
 
-        <footer>
-            <div class="footer_main">
+          <div class="featurde_book_tag">
+            <h2>Featured Books</h2>
+            <p class="writer">B. R. Patil</p>
+            <div class="categories">Basic Electronics and Electicals</div>
+            <p class="book_price">
+              $23.65<sub><del>$26.40</del></sub>
+            </p>
+            <a href="cart.html" class="f_btn">Add to Cart</a>
+          </div>
+        </div>
 
-                <div class="tag">
-                    <img src="{% static 'images/logonew.jpg' %}">
-                </div>
+        <div class="featured_book_card">
+          <div class="featurde_book_img">
+            <img src="{% static 'images/ed.jpg' %}" />
+          </div>
 
-                <div class="tag">
-                    <h1>Quick Link</h1>
-                    <ul>
-                        <a href="#Home">Home</a>
-                        <a href="#Featured">Featured</a>
-                        <a href="#Trending">Trending</a>
-                        <a href="#Authentic">Authentic</a>
-                        <a href="#Arrivals">Arrivals</a>
-                        <a href="#Blog">Blog</a>
-                    </ul> 
-                </div>
+          <div class="featurde_book_tag">
+            <h2>Featured Books</h2>
+            <p class="writer">K. Venugopal<br />V. Prabhu Raja</p>
+            <div class="categories">Engineering Drawings</div>
+            <p class="book_price">
+              $29.60<sub><del>$32.30</del></sub>
+            </p>
+            <a href="cart.html" class="f_btn">Add to Cart</a>
+          </div>
+        </div>
 
-                <div class="tag">
-                    <h1>Contact Info</h1>
-                    <a href="#"><i class="fa-solid fa-phone"></i>+91 12 345 6789</a>
-                    <a href="#"><i class="fa-solid fa-phone"></i>+91 98 945 6086</a>
-                    <a href="#email"><i class="fa-solid fa-envelope"></i>पुसtaak123@gmail.com</a>   
-                </div>
+        <div class="featured_book_card">
+          <div class="featurde_book_img">
+            <img src="{% static 'images/phy.jpg' %}" />
+          </div>
 
-                <div class="tag">
-                    <h1>Follow Us</h1>
-                    <div class="social_link">
-                        <i class="fa-brands fa-facebook"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-linkedin"></i>
-                    </div>   
-                </div>
+          <div class="featurde_book_tag">
+            <h2>Featured Books</h2>
+            <p class="writer">Dr. P. Manikandan<br />Dr. S. Rafi Ahmed</p>
+            <div class="categories">Physics</div>
+            <p class="book_price">
+              $28.30<sub><del>$30.56</del></sub>
+            </p>
+            <a href="#" class="f_btn">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                <div class="tag">
-                    <h1>Newsletter</h1>
-                    <div class="search_bar">
-                        <input type="text" placeholder="Your email id here">
-                        <button type="submit">Subscribe</button>
-                    </div>
-                </div>
+    <!--Trending-->
 
+    <h1><a name="Trending"></a></h1>
+    <br />
+    <br />
+    <br />
+
+    <div class="trending">
+      <h1><b>Trending</b></h1>
+
+      <div class="trending_box">
+        <div class="trending_card">
+          <div class="trending_image">
+            <img src="{% static 'images/gitanjali.jpg' %}" />
+          </div>
+
+          <div class="trending_tag">
+            <p>Trending</p>
+            <div class="trending_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
             </div>
+            <a href="#" class="trending_btn">Add to Cart</a>
+          </div>
+        </div>
 
-            <p class="end"><big><b>Design By<span><i class="fa-solid fa-face-grin"></i>पुसtaak team</span></b></big></p>
+        <div class="trending_card">
+          <div class="trending_image">
+            <img src="{% static 'images/parineeta.jpg' %}" />
+          </div>
 
-        </footer>
-    
-    
-    
-    
-    
-    </body>
+          <div class="trending_tag">
+            <p>Trending</p>
+            <div class="trending_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <a href="#" class="trending_btn">Add to Cart</a>
+          </div>
+        </div>
+
+        <div class="trending_card">
+          <div class="trending_image">
+            <img src="{% static 'images/sherlock.jpg' %}" />
+          </div>
+
+          <div class="trending_tag">
+            <p>Trending</p>
+            <div class="trending_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <a href="#" class="trending_btn">Add to Cart</a>
+          </div>
+        </div>
+
+        <div class="trending_card">
+          <div class="trending_image">
+            <img src="{% static 'images/hamlet.jpg' %}" />
+          </div>
+
+          <div class="trending_tag">
+            <p>Trending</p>
+            <div class="trending_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <a href="#" class="trending_btn">Add to Cart</a>
+          </div>
+        </div>
+
+        <div class="trending_card">
+          <div class="trending_image">
+            <img src="{% static 'images/harry potter.jpg' %}" />
+          </div>
+
+          <div class="trending_tag">
+            <p>Trending</p>
+            <div class="trending_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <a href="#" class="trending_btn">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Authentic-->
+
+    <h1><a name="Authentic"></a></h1>
+    <br />
+    <br />
+    <br />
+
+    <div class="authentic">
+      <h1><b>Authentics</b></h1>
+
+      <div class="authentic_box">
+        <div class="authentic_card">
+          <div class="authentic_image">
+            <img src="{% static 'images/rajarshi.jpg' %}" />
+          </div>
+
+          <div class="authentic_tag">
+            <p>Authentics</p>
+            <div class="authentic_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <a href="#" class="authentic_btn">Add to Cart</a>
+          </div>
+        </div>
+
+        <div class="authentic_card">
+          <div class="authentic_image">
+            <img src="{% static 'images/rajmala.jpg' %}" />
+          </div>
+
+          <div class="authentic_tag">
+            <p>Authentics</p>
+            <div class="authentic_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <a href="#" class="authentic_btn">Add to Cart</a>
+          </div>
+        </div>
+
+        <div class="authentic_card">
+          <div class="authentic_image">
+            <img src="{% static 'images/mahabharat.jpg' %}" />
+          </div>
+
+          <div class="authentic_tag">
+            <p>Authentics</p>
+            <div class="authentic_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <a href="#" class="authentic_btn">Add to Cart</a>
+          </div>
+        </div>
+
+        <div class="authentic_card">
+          <div class="authentic_image">
+            <img src="{% static 'images/apj.jpg' %}" />
+          </div>
+
+          <div class="authentic_tag">
+            <p>Authentics</p>
+            <div class="authentic_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <a href="#" class="authentic_btn">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Arrivals-->
+
+    <h1><a name="Arrivals"></a></h1>
+    <br />
+    <br />
+    <br />
+
+    <div class="arrivals">
+      <h1><b>New Arrivals</b></h1>
+
+      <div class="arrivals_box">
+        <div class="arrivals_card">
+          <div class="arrivals_image">
+            <img src="{% static 'images/na1.jpg' %}" />
+          </div>
+
+          <div class="arrivals_tag">
+            <p>New Arrivals</p>
+            <div class="arrivals_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <a href="#" class="arrivals_btn">Add to Cart</a>
+          </div>
+        </div>
+
+        <div class="arrivals_card">
+          <div class="arrivals_image">
+            <img src="{% static 'images/na2.webp' %}" />
+          </div>
+
+          <div class="arrivals_tag">
+            <p>New Arrivals</p>
+            <div class="arrivals_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <a href="#" class="arrivals_btn">Add to Cart</a>
+          </div>
+        </div>
+
+        <div class="arrivals_card">
+          <div class="arrivals_image">
+            <img src="{% static 'images/na3.jpg' %}" />
+          </div>
+
+          <div class="arrivals_tag">
+            <p>New Arrivals</p>
+            <div class="arrivals_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <a href="#" class="arrivals_btn">Add to Cart</a>
+          </div>
+        </div>
+
+        <div class="arrivals_card">
+          <div class="arrivals_image">
+            <img src="{% static 'images/na4.webp' %}" />
+          </div>
+
+          <div class="arrivals_tag">
+            <p>New Arrivals</p>
+            <div class="arrivals_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <a href="#" class="arrivals_btn">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--reviews-->
+
+    <div class="reviews">
+      <h1>Reviews</h1>
+
+      <div class="review_box">
+        <div class="review_card">
+          <i class="fa-solid fa-quote-right"></i>
+          <div class="card_top">
+            <img src="{% static 'images/dummy.png' %}" />
+          </div>
+
+          <div class="card">
+            <h2>Ram</h2>
+            <p>
+              This book-related website has become an indispensable tool in my
+              reading journey. Its user-friendly interface, vast library,
+              engaged community, commitment to diversity, and additional
+              resources make it a standout platform for book lovers. I highly
+              recommend exploring this website to enhance your reading
+              experience and discover your next literary obsession.
+            </p>
+            <div class="review_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="review_card">
+          <i class="fa-solid fa-quote-right"></i>
+
+          <div class="card_top">
+            <img src="{% static 'images/dummy.png' %}" />
+          </div>
+
+          <div class="card">
+            <h2>Priya Deb</h2>
+            <p>
+              I recently stumbled upon a fantastic book-related website that I
+              cannot recommend enough! This online platform has truly
+              revolutionized the way I discover and explore new books. From its
+              user-friendly interface to its vast collection of literary
+              treasures, this website has become my go-to resource for all
+              things bookish.
+            </p>
+
+            <div class="review_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="review_card">
+          <i class="fa-solid fa-quote-right"></i>
+
+          <div class="card_top">
+            <img src="{% static 'images/dummy.png' %}" />
+          </div>
+
+          <div class="card">
+            <h2>Sham Roy</h2>
+            <p>
+              The website's design is sleek and intuitive. Navigating through
+              its various sections is a breeze, making it effortless to find
+              exactly what I'm looking for. The layout is visually appealing and
+              organized, ensuring a seamless browsing experience. Whether you're
+              a seasoned bookworm or a casual reader, this website caters to all
+              tastes and preferences.
+            </p>
+
+            <div class="review_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="review_card">
+          <i class="fa-solid fa-quote-right"></i>
+
+          <div class="card_top">
+            <img src="{% static 'images/dummy.png' %}" />
+          </div>
+
+          <div class="card">
+            <h2>Nita B</h2>
+            <p>
+              The platform encourages users to share their thoughts,
+              recommendations, and even create personalized reading lists. I've
+              had the pleasure of connecting with like-minded readers who share
+              my passion for literature, sparking engaging discussions and
+              discovering hidden literary gems I may have otherwise missed.
+            </p>
+
+            <div class="review_icon">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Banner-->
+
+    <div class="banner"></div>
+
+    <!--Blog-->
+
+    <h1><a name="Blog"></a></h1>
+    <br />
+    <br />
+    <br />
+
+    <div class="blog">
+      <h1><b>Our Blog</b></h1>
+
+      <div class="blog_box">
+        <div class="blog_card">
+          <div class="blog_img">
+            <img src="{% static 'images/rajmala.jpg' %}" />
+          </div>
+          <div class="blog_tag">
+            <h2>Blogger</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+              maiores architecto aut assumenda labore quam reprehenderit magni
+              iusto, nam quo, omnis facilis, delectus beatae nihil! Totam
+              similique temporibus voluptatibus nisi. Lorem ipsum, dolor sit
+              amet consectetur adipisicing elit. Laudantium voluptas iure, iusto
+              ut dolorem veniam ipsam deserunt quod ad. Dicta soluta nulla,
+              omnis et aperiam dolor deserunt consectetur quas quo!
+            </p>
+            <div class="blog_icon">
+              <i class="fa-solid fa-calendar-days"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog_card">
+          <div class="blog_img">
+            <img src="{% static 'images/hamlet.jpg' %}" />
+          </div>
+          <div class="blog_tag">
+            <h2>Blogger</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+              maiores architecto aut assumenda labore quam reprehenderit magni
+              iusto, nam quo, omnis facilis, delectus beatae nihil! Totam
+              similique temporibus voluptatibus nisi. Lorem ipsum, dolor sit
+              amet consectetur adipisicing elit. Laudantium voluptas iure, iusto
+              ut dolorem veniam ipsam deserunt quod ad. Dicta soluta nulla,
+              omnis et aperiam dolor deserunt consectetur quas quo!
+            </p>
+            <div class="blog_icon">
+              <i class="fa-solid fa-calendar-days"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog_card">
+          <div class="blog_img">
+            <img src="{% static 'images/gitanjali.jpg' %}" />
+          </div>
+          <div class="blog_tag">
+            <h2>Blogger</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+              maiores architecto aut assumenda labore quam reprehenderit magni
+              iusto, nam quo, omnis facilis, delectus beatae nihil! Totam
+              similique temporibus voluptatibus nisi. Lorem ipsum, dolor sit
+              amet consectetur adipisicing elit. Laudantium voluptas iure, iusto
+              ut dolorem veniam ipsam deserunt quod ad. Dicta soluta nulla,
+              omnis et aperiam dolor deserunt consectetur quas quo!
+            </p>
+            <div class="blog_icon">
+              <i class="fa-solid fa-calendar-days"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Footer-->
+
+    <footer>
+      <div class="footer_main">
+        <div class="tag">
+          <img src="{% static 'images/logonew.jpg' %}" />
+        </div>
+
+        <div class="tag">
+          <h1>Quick Link</h1>
+          <ul>
+            <a href="#Home">Home</a>
+            <a href="#Featured">Featured</a>
+            <a href="#Trending">Trending</a>
+            <a href="#Authentic">Authentic</a>
+            <a href="#Arrivals">Arrivals</a>
+            <a href="#Blog">Blog</a>
+          </ul>
+        </div>
+
+        <div class="tag">
+          <h1>Contact Info</h1>
+          <a href="#"><i class="fa-solid fa-phone"></i>+91 12 345 6789</a>
+          <a href="#"><i class="fa-solid fa-phone"></i>+91 98 945 6086</a>
+          <a href="#email"
+            ><i class="fa-solid fa-envelope"></i>पुसtaak123@gmail.com</a
+          >
+        </div>
+
+        <div class="tag">
+          <h1>Follow Us</h1>
+          <div class="social_link">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+        </div>
+
+        <div class="tag">
+          <h1>Newsletter</h1>
+          <div class="search_bar">
+            <input type="text" placeholder="Your email id here" />
+            <button type="submit">Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      <p class="end">
+        <big
+          ><b
+            >Design By<span
+              ><i class="fa-solid fa-face-grin"></i>पुसtaak team</span
+            ></b
+          ></big
+        >
+      </p>
+    </footer>
+  </body>
 </html>
